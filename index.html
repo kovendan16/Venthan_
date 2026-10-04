@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech professional specializing in SEO, Web Development, and Cybersecurity. Expert in technical SEO, website optimization, MERN stack, Splunk and AWS.">
+    <meta name="keywords" content="SEO Specialist, Web Developer, Cybersecurity, Technical SEO, MERN Stack, Portfolio">
+    <title>Arjun Mehta — SEO & Web Development Professional | Cybersecurity Operations</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --dark: #0F172A;
+            --dark-2:#1E293B;
+            --accent:#2563EB;
+            --accent-hover:#1D4ED8;
+            --muted:#64748B;
+            --muted-light:#94A3B8;
+            --line:#E2E8F0;
+            --line-2:#F1F5F9;
+            --bg:#FFFFFF;
+            --bg-alt:#F8FAFC;
+            --radius:16px;
+            --radius-sm:12px;
+            --shadow: 0 1px 3px rgba(15,23,42,0.06), 0 8px 24px rgba(15,23,42,0.06);
+            --shadow-hover: 0 8px 30px rgba(15,23,42,0.10), 0 2px 8px rgba(15,23,42,0.06);
+        }
+        *{scroll-behavior:smooth;}
+        body{
+            font-family:'Inter',system-ui,-apple-system,sans-serif;
+            color:var(--dark);
+            background:var(--bg);
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+        }
+        h1,h2,h3,h4{letter-spacing:-0.025em; line-height:1.1;}
+        a{ text-decoration:none}
+        /* Navbar */
+        .navbar{
+            background:rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-bottom:1px solid var(--line);
+            padding:14px 0;
+            transition: all .25s ease;
+        }
+        .navbar.scrolled{ box-shadow:0 1px 12px rgba(15,23,42,0.06)}
+        .navbar-brand{
+            font-weight:800; font-size:18px; letter-spacing:-0.03em; color:var(--dark)!important;
+            display:flex; align-items:center; gap:10px;
+        }
+        .brand-mark{
+            width:34px; height:34px; border-radius:9px; background:var(--dark); color:#fff;
+            display:grid; place-items:center; font-size:13px; font-weight:800;
+        }
+        .nav-link{
+            font-size:14px; font-weight:500; color:var(--muted)!important; padding:8px 14px!important;
+        }
+        .nav-link.active, .nav-link:hover{ color:var(--dark)!important}
+        .btn-primary{
+            background:var(--dark); border-color:var(--dark); font-weight:600; font-size:14px;
+            padding:10px 20px; border-radius:999px; letter-spacing:-0.01em;
+        }
+        .btn-primary:hover{ background:var(--dark-2); border-color:var(--dark-2); transform:translateY(-1px)}
+        .btn-outline-dark{
+            border-radius:999px; font-weight:600; font-size:14px; padding:10px 20px;
+            border-color:var(--line); color:var(--dark); background:#fff;
+        }
+        .btn-outline-dark:hover{ background:var(--bg-alt); border-color:var(--line); color:var(--dark)}
+        /* Scroll progress */
+        #progress{
+            position:fixed; top:0; left:0; height:2px; background:var(--accent); width:0; z-index:9999; transition:width .1s linear;
+        }
+        /* Hero */
+        .hero{
+            padding:56px 0 48px;
+            background:
+                radial-gradient(600px 400px at 85% -10%, rgba(37,99,235,0.06), transparent 70%),
+                linear-gradient(180deg, #fff 0%, #F8FAFC 100%);
+            overflow:hidden;
+        }
+        .eyebrow{
+            display:inline-flex; align-items:center; gap:8px;
+            font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+            color:var(--muted); background:#fff; border:1px solid var(--line);
+            padding:6px 12px; border-radius:999px;
+        }
+        .eyebrow .dot{width:8px; height:8px; background:#10B981; border-radius:50%; box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+        .hero h1{
+            font-size:clamp(36px, 5vw, 56px); font-weight:800; margin:18px 0 14px; line-height:0.95;
+        }
+        .hero h1 span{ color:var(--accent)}
+        .hero .lead{
+            font-size:17px; color:var(--muted); max-width:560px; line-height:1.7; font-weight:400;
+        }
+        .tech-badges{
+            display:flex; flex-wrap:wrap; gap:8px; margin-top:22px;
+        }
+        .tech-badge{
+            font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:500;
+            letter-spacing:0.04em; text-transform:uppercase; color:var(--dark-2);
+            background:#fff; border:1px solid var(--line); padding:7px 10px; border-radius:999px;
+        }
+        .hero-visual{
+            position:relative; background:#fff; border:1px solid var(--line); border-radius:20px;
+            padding:18px; box-shadow:var(--shadow);
+        }
+        .code-header{
+            display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;
+        }
+        .dots{display:flex; gap:6px}
+        .dots span{width:9px; height:9px; border-radius:50%; display:block}
+        .code-box{
+            background:var(--dark); border-radius:14px; padding:18px; color:#E2E8F0;
+            font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.7;
+            position:relative; overflow:hidden;
+        }
+        .code-box .cmt{color:#64748B} .code-box .key{color:#93C5FD} .code-box .str{color:#86EFAC} .code-box .num{color:#FCD34D}
+        .mini-stats{
+            display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;
+        }
+        .mini-stat{
+            background:var(--bg-alt); border:1px solid var(--line); border-radius:14px; padding:14px;
+        }
+        .mini-stat strong{font-size:20px; display:block; line-height:1}
+        .mini-stat span{font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)}
+        /* Section */
+        section{padding:84px 0}
+        .section-alt{background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+        .section-label{
+            font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;
+        }
+        .section-title{font-size:clamp(28px, 3.2vw, 36px); font-weight:800; margin-bottom:12px}
+        .section-desc{color:var(--muted); font-size:15px; max-width:620px; line-height:1.7}
+        /* Cards */
+        .card-minimal{
+            background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+            padding:24px; height:100%; transition:all .25s ease;
+        }
+        .card-minimal:hover{ transform:translateY(-4px); box-shadow:var(--shadow-hover); border-color:#CBD5E1}
+        .icon-box{
+            width:40px; height:40px; border-radius:10px; display:grid; place-items:center;
+            font-size:16px; margin-bottom:16px;
+        }
+        .skill-list{ list-style:none; padding:0; margin:12px 0 0}
+        .skill-list li{
+            display:flex; align-items:center; gap:10px; font-size:14px; color:var(--dark-2);
+            padding:7px 0; border-bottom:1px dashed #F1F5F9;
+        }
+        .skill-list li:last-child{border:0}
+        .skill-list li i{color:var(--accent); font-size:11px}
+        .tag{
+            display:inline-flex; align-items:center; font-size:11px; font-weight:600; letter-spacing:0.03em;
+            padding:5px 9px; border-radius:999px; background:var(--bg-alt); border:1px solid var(--line); color:var(--muted);
+        }
+        /* Projects */
+        .project-card{
+            background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden;
+            transition:all .25s ease; height:100%; display:flex; flex-direction:column;
+        }
+        .project-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-hover)}
+        .project-top{
+            padding:14px 18px; display:flex; align-items:center; justify-content:space-between;
+            border-bottom:1px solid var(--line); background:#fff;
+        }
+        .company{
+            font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted);
+            display:flex; align-items:center; gap:8px;
+        }
+        .company::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--accent); display:inline-block}
+        .project-body{padding:20px 22px; flex:1; display:flex; flex-direction:column}
+        .project-title{font-size:18px; font-weight:750; margin-bottom:8px}
+        .project-desc{font-size:14px; color:var(--muted); line-height:1.65; margin-bottom:14px}
+        .meta-row{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px}
+        .contrib{ background:var(--bg-alt); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:16px}
+        .contrib-title{font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+        .contrib ul{margin:0; padding-left:16px; color:var(--dark-2); font-size:13px; line-height:1.7}
+        .project-foot{padding:0 22px 20px; display:flex; gap:10px}
+        /* Timeline */
+        .timeline{position:relative; padding-left:28px}
+        .timeline::before{
+            content:''; position:absolute; left:7px; top:8px; bottom:8px; width:2px; background:var(--line); border-radius:2px;
+        }
+        .t-item{position:relative; padding-bottom:36px}
+        .t-item:last-child{padding-bottom:0}
+        .t-dot{
+            position:absolute; left:-28px; top:4px; width:16px; height:16px; border-radius:50%;
+            background:#fff; border:3px solid var(--accent); box-shadow:0 0 0 4px rgba(37,99,235,0.12);
+        }
+        .t-item.active .t-dot{ background:var(--accent)}
+        .t-card{
+            background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px 22px;
+        }
+        .t-date{
+            font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent);
+            background:rgba(37,99,235,0.08); border:1px solid rgba(37,99,235,0.12); padding:4px 8px; border-radius:999px; display:inline-flex;
+        }
+        /* Tools */
+        .tool-grid{
+            display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:12px;
+        }
+        .tool{
+            background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px;
+            display:flex; align-items:center; gap:12px; transition:all .2s ease;
+        }
+        .tool:hover{ border-color:#CBD5E1; transform:translateY(-2px); box-shadow:var(--shadow)}
+        .tool i{width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background:var(--bg-alt); border:1px solid var(--line); font-size:15px}
+        .tool strong{font-size:13px; line-height:1.1; display:block}
+        .tool span{font-size:11px; color:var(--muted); font-weight:500}
+        /* About */
+        .about-card{
+            background:#fff; border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:var(--shadow);
+        }
+        .check{width:22px; height:22px; border-radius:50%; background:rgba(37,99,235,0.10); color:var(--accent); display:grid; place-items:center; font-size:11px; flex:0 0 22px}
+        /* Contact */
+        .contact-card{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px; display:flex; gap:14px; align-items:flex-start}
+        .contact-card i{width:40px; height:40px; border-radius:10px; background:var(--bg-alt); border:1px solid var(--line); display:grid; place-items:center; color:var(--dark)}
+        .form-control{
+            border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:14px; background:#fff;
+        }
+        .form-control:focus{ border-color:var(--accent); box-shadow:0 0 0 4px rgba(37,99,235,0.12)}
+        .form-label{font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+        .invalid-feedback{font-size:12px}
+        /* Reveal */
+        .reveal{ opacity:0; transform:translateY(16px); transition: all .6s cubic-bezier(.16,1,.3,1)}
+        .reveal.in{ opacity:1; transform:none}
+        .stagger > *{ opacity:0; transform:translateY(12px)}
+        .stagger.in > *{ opacity:1; transform:none; transition: all .5s ease}
+        .stagger.in > *:nth-child(1){transition-delay:.05s} .stagger.in > *:nth-child(2){transition-delay:.1s} .stagger.in > *:nth-child(3){transition-delay:.15s} .stagger.in > *:nth-child(4){transition-delay:.2s} .stagger.in > *:nth-child(5){transition-delay:.25s} .stagger.in > *:nth-child(6){transition-delay:.3s}
+        /* Footer */
+        footer{ padding:36px 0; border-top:1px solid var(--line); background:#fff}
+        .social a{
+            width:36px; height:36px; border-radius:999px; display:grid; place-items:center;
+            border:1px solid var(--line); color:var(--muted); background:#fff; transition:all .2s;
+        }
+        .social a:hover{ background:var(--dark); color:#fff; border-color:var(--dark); transform:translateY(-2px)}
+        /* Responsive tweaks */
+        @media (max-width:991px){
+            section{padding:64px 0}
+            .hero{padding:32px 0 36px}
+        }
+        @media (max-width:575px){
+            .tool-grid{grid-template-columns:1fr 1fr}
+        }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="brand-mark">B</span>
+                Koventhan
+                <span class="d-none d-md-inline" style="font-weight:500; color:var(--muted); font-size:13px; margin-left:4px;">— SEO & Cybersecurity</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="#contact" class="btn btn-primary btn-sm px-4">Hire Me <i class="fa-solid fa-arrow-right ms-1" style="font-size:11px"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center g-4 g-lg-5">
+                <div class="col-lg-7">
+                    <div class="eyebrow reveal"><span class="dot"></span> Available for new opportunities</div>
+                    <h1 class="reveal" style="transition-delay:.08s">Hi, I'm <span>Koventhan  B</span><br>SEO & Web Development Professional</h1>
+                    <p class="lead reveal" style="transition-delay:.12s">Tech professional with hands-on experience in SEO, web development, website optimization, and cybersecurity operations. I build fast, secure, search-optimized experiences that convert.</p>
+                    
+                    <div class="d-flex flex-wrap gap-2 mt-4 reveal" style="transition-delay:.16s">
+                        <a href="#projects" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-up-right-from-square ms-1"   style="font-size:12px"></i></a>
+                        <a href="#contact" class="btn btn-outline-dark">Contact Me</a>
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('cvToast').classList.add('show'); setTimeout(()=>document.getElementById('cvToast').classList.remove('show'),2500)" class="btn btn-outline-dark d-inline-flex align-items-center gap-2"><i class="fa-regular fa-file-lines"></i> Download CV</a>
+                    </div>
+
+                    <div class="tech-badges reveal" style="transition-delay:.2s">
+                        <span class="tech-badge">SEO</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">WordPress</span>
+                        <span class="tech-badge">MERN</span>
+                        <span class="tech-badge">Splunk</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+
+                    <div class="d-flex gap-4 mt-4 pt-2 flex-wrap reveal" style="transition-delay:.24s">
+                        <div class="d-flex align-items-center gap-2" style="font-size:13px; color:var(--muted)"><i class="fa-solid fa-location-dot" style="color:var(--accent)"></i> Bengaluru, India • Remote Worldwide</div>
+                        <div class="d-flex align-items-center gap-2" style="font-size:13px; color:var(--muted)"><i class="fa-solid fa-star" style="color:#F59E0B"></i> 4.9/5 Client Rating</div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-visual reveal" style="transition-delay:.18s">
+                        <div class="code-header">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="dots"><span style="background:#FF5F56"></span><span style="background:#FFBD2E"></span><span style="background:#27C93F"></span></div>
+                                <span style="font-size:12px; font-weight:600; color:var(--muted); letter-spacing:0.04em">arjun — portfolio.js</span>
+                            </div>
+                            <span class="tag" style="font-family:'JetBrains Mono',monospace">SEO • SECURE • FAST</span>
+                        </div>
+                        <div class="code-box">
+                            <div><span class="cmt">// optimizing for performance & security</span></div>
+                            <div><span class="key">const</span> professional = {</div>
+                            <div>&nbsp;&nbsp;role: <span class="str">"SEO & Web Dev"</span>,</div>
+                            <div>&nbsp;&nbsp;focus: [<span class="str">"Technical SEO"</span>, <span class="str">"Core Web Vitals"</span>],</div>
+                            <div>&nbsp;&nbsp;stack: [<span class="str">"MERN"</span>, <span class="str">"WordPress"</span>, <span class="str">"AWS"</span>],</div>
+                            <div>&nbsp;&nbsp;security: <span class="str">"Splunk • SOC • OWASP"</span>,</div>
+                            <div>&nbsp;&nbsp;performance: <span class="num">98</span> <span class="cmt">// Lighthouse</span></div>
+                            <div>};</div>
+                        </div>
+                        <div class="mini-stats">
+                            <div class="mini-stat">
+                                <strong>120+</strong>
+                                <span>Websites Optimized</span>
+                            </div>
+                            <div class="mini-stat">
+                                <strong>3+ Yrs</strong>
+                                <span>Professional Exp.</span>
+                            </div>
+                            <div class="mini-stat">
+                                <strong>45%</strong>
+                                <span>Avg. Traffic Growth</span>
+                            </div>
+                            <div class="mini-stat">
+                                <strong>100%</strong>
+                                <span>Secure Deployments</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mt-3" style="font-size:12px; color:var(--muted)">
+                            <img src="https://i.pravatar.cc/100?img=15" alt="client" style="width:28px; height:28px; border-radius:50%; object-fit:cover; border:2px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,0.1)">
+                            <img src="https://i.pravatar.cc/100?img=32" alt="client" style="width:28px; height:28px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-left:-10px">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="client" style="width:28px; height:28px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-left:-10px">
+                            <span style="margin-left:4px"><strong style="color:var(--dark)">Trusted by 30+ companies</strong> • SEO & Dev</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <div class="row g-4 g-lg-5 align-items-start">
+                    <div class="col-lg-5">
+                        <div class="section-label reveal">About Me</div>
+                        <h2 class="section-title reveal" style="transition-delay:.06s">Bridging search, code & security.</h2>
+                        <p class="section-desc reveal" style="transition-delay:.1s">I’m a tech professional focused on building websites that rank, perform, and stay secure. My work sits at the intersection of technical SEO, modern web development, and cybersecurity operations.</p>
+                        
+                        <div class="about-card mt-4 reveal" style="transition-delay:.14s">
+                            <div class="d-flex gap-3 align-items-center mb-3">
+<!--                                 <img src="https://i.pravatar.cc/200?img=15" alt="Arjun Mehta" style="width:56px; height:56px; border-radius:14px; object-fit:cover"> -->
+                                <div>
+                                    <div style="font-weight:700; line-height:1">  Koventhan B</div>
+                                    <div style="font-size:12px; color:var(--muted); font-weight:600; letter-spacing:0.06em; text-transform:uppercase"> • Open to SOC / SEO Roles</div>
+                                </div>
+                                <span class="ms-auto tag" style="color:#059669; background:rgba(16,185,129,0.10); border-color:rgba(16,185,129,0.18)"><span style="width:6px; height:6px; background:#10B981; border-radius:50%; display:inline-block; margin-right:6px"></span>Available</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tag"><i class="fa-solid fa-shield-halved me-1"></i> OWASP Aware</span>
+                                <span class="tag"><i class="fa-solid fa-gauge-high me-1"></i> Core Web Vitals</span>
+                                <span class="tag"><i class="fa-solid fa-magnifying-glass me-1"></i> Technical SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-3 stagger">
+                            <div class="col-md-6">
+                                <div class="card-minimal">
+                                    <div class="icon-box" style="background:rgba(37,99,235,0.08); color:var(--accent); border:1px solid rgba(37,99,235,0.12)"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                    <h3 style="font-size:16px; font-weight:750">SEO & Optimization</h3>
+                                    <p style="font-size:13px; color:var(--muted); margin:8px 0 0; line-height:1.6">On-page, technical & off-page SEO. Keyword research, content clustering, schema, Core Web Vitals, and sustainable backlink building that drives organic growth.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-minimal">
+                                    <div class="icon-box" style="background:rgba(16,185,129,0.08); color:#059669; border:1px solid rgba(16,185,129,0.14)"><i class="fa-solid fa-code"></i></div>
+                                    <h3 style="font-size:16px; font-weight:750">Web Development</h3>
+                                    <p style="font-size:13px; color:var(--muted); margin:8px 0 0; line-height:1.6">Responsive, SEO-friendly builds with HTML, CSS, JavaScript, WordPress & MERN. Focus on performance, accessibility, and clean, maintainable code.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-minimal">
+                                    <div class="icon-box" style="background:rgba(245,158,11,0.10); color:#D97706; border:1px solid rgba(245,158,11,0.18)"><i class="fa-solid fa-shield-halved"></i></div>
+                                    <h3 style="font-size:16px; font-weight:750">Cybersecurity Exposure</h3>
+                                    <p style="font-size:13px; color:var(--muted); margin:8px 0 0; line-height:1.6">Hands-on with SOC workflows, Splunk, AWS security basics, vulnerability assessment and secure coding aligned with OWASP Top 10.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-minimal" style="background:var(--dark); color:#fff; border-color:var(--dark)">
+                                    <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6">Approach</div>
+                                    <p style="font-size:15px; font-weight:600; line-height:1.5; margin:10px 0 12px">“Optimize for humans, structure for crawlers, harden for threats.”</p>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="d-flex gap-2 align-items-center" style="font-size:13px; opacity:0.9"><span class="check" style="background:rgba(255,255,255,0.12); color:#fff"><i class="fa-solid fa-check"></i></span> Data-driven decisions</div>
+                                        <div class="d-flex gap-2 align-items-center" style="font-size:13px; opacity:0.9"><span class="check" style="background:rgba(255,255,255,0.12); color:#fff"><i class="fa-solid fa-check"></i></span> Performance-first builds</div>
+                                        <div class="d-flex gap-2 align-items-center" style="font-size:13px; opacity:0.9"><span class="check" style="background:rgba(255,255,255,0.12); color:#fff"><i class="fa-solid fa-check"></i></span> Security by design</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section-alt">
+            <div class="container">
+                <div class="text-center mx-auto mb-5" style="max-width:680px">
+                    <div class="section-label reveal">Expertise</div>
+                    <h2 class="section-title reveal" style="transition-delay:.06s">Skills across SEO, Development & Security</h2>
+                    <p class="section-desc mx-auto reveal" style="transition-delay:.1s">A balanced skillset to take a project from search strategy to secure deployment — without handoffs getting lost.</p>
+                </div>
+
+                <div class="row g-3 g-lg-4 stagger">
+                    <!-- SEO -->
+                    <div class="col-lg-4">
+                        <div class="card-minimal">
+                            <div class="icon-box" style="background:rgba(37,99,235,0.08); color:var(--accent); border:1px solid rgba(37,99,235,0.12)"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3 style="font-size:18px; font-weight:800">SEO</h3>
+                            <p style="font-size:13px; color:var(--muted); margin:6px 0 0">Driving qualified organic traffic with technical excellence.</p>
+                            <ul class="skill-list">
+                                <li><i class="fa-solid fa-check"></i> On-Page & Technical SEO</li>
+                                <li><i class="fa-solid fa-check"></i> Keyword Research & Clustering</li>
+                                <li><i class="fa-solid fa-check"></i> Off-Page SEO & Backlink Building</li>
+                                <li><i class="fa-solid fa-check"></i> Schema Markup & Structured Data</li>
+                                <li><i class="fa-solid fa-check"></i> Core Web Vitals & Site Speed</li>
+                                <li><i class="fa-solid fa-check"></i> Google Search Console & Analytics</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="tag">Screaming Frog</span><span class="tag">Ahrefs</span><span class="tag">SEMrush</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Web Dev -->
+                    <div class="col-lg-4">
+                        <div class="card-minimal" style="border-color:var(--dark); box-shadow:var(--shadow)">
+                            <div class="icon-box" style="background:var(--dark); color:#fff"><i class="fa-solid fa-layer-group"></i></div>
+                            <h3 style="font-size:18px; font-weight:800">Web Development</h3>
+                            <p style="font-size:13px; color:var(--muted); margin:6px 0 0">Fast, accessible, SEO-ready websites and apps.</p>
+                            <ul class="skill-list">
+                                <li><i class="fa-solid fa-check"></i> HTML5 • CSS3 • JavaScript (ES6+)</li>
+                                <li><i class="fa-solid fa-check"></i> WordPress • Custom Themes</li>
+                                <li><i class="fa-solid fa-check"></i> MERN Stack (MongoDB, Express, React, Node)</li>
+                                <li><i class="fa-solid fa-check"></i> Responsive & Performance Optimization</li>
+                                <li><i class="fa-solid fa-check"></i> REST APIs & Integrations</li>
+                                <li><i class="fa-solid fa-check"></i> Git, CI/CD & Hosting (AWS)</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="tag" style="background:var(--dark); color:#fff; border-color:var(--dark)">MERN</span><span class="tag">WordPress</span><span class="tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cyber -->
+                    <div class="col-lg-4">
+                        <div class="card-minimal">
+                            <div class="icon-box" style="background:rgba(16,185,129,0.08); color:#059669; border:1px solid rgba(16,185,129,0.14)"><i class="fa-solid fa-shield"></i></div>
+                            <h3 style="font-size:18px; font-weight:800">Cybersecurity</h3>
+                            <p style="font-size:13px; color:var(--muted); margin:6px 0 0">Defensive mindset baked into every build.</p>
+                            <ul class="skill-list">
+                                <li><i class="fa-solid fa-check"></i> SOC Operations & Monitoring</li>
+                                <li><i class="fa-solid fa-check"></i> Splunk SIEM & Log Analysis</li>
+                                <li><i class="fa-solid fa-check"></i> AWS Security Basics (IAM, WAF)</li>
+                                <li><i class="fa-solid fa-check"></i> Vulnerability Assessment</li>
+                                <li><i class="fa-solid fa-check"></i> OWASP Top 10 & Secure Coding</li>
+                                <li><i class="fa-solid fa-check"></i> Incident Response Support</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="tag">Splunk</span><span class="tag">AWS</span><span class="tag">OWASP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+                    <div>
+                        <div class="section-label reveal">Selected Work</div>
+                        <h2 class="section-title reveal" style="transition-delay:.06s">Projects that delivered impact</h2>
+                        <p class="section-desc reveal" style="transition-delay:.1s">Real client work across SEO, development and security. Organized by organization.</p>
+                    </div>
+                    <div class="d-flex gap-2 reveal" style="transition-delay:.12s">
+                        <span class="tag" style="padding:8px 12px">3 Companies • 3 Case Studies</span>
+                    </div>
+                </div>
+
+                <div class="row g-4 stagger">
+                    <!-- Project 1 -->
+                    <div class="col-lg-4">
+                        <article class="project-card">
+                            <div class="project-top">
+                                <span class="company">Five Technology</span>
+                                <span class="tag" style="background:rgba(37,99,235,0.08); color:var(--accent); border-color:rgba(37,99,235,0.14)">SEO & Optimization</span>
+                            </div>
+                            <div style="height:160px; background:linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); display:grid; place-items:center; border-bottom:1px solid var(--line); position:relative; overflow:hidden">
+                                <i class="fa-solid fa-magnifying-glass-chart" style="font-size:42px; color:#93C5FD"></i>
+                                <div style="position:absolute; bottom:12px; right:12px; background:#fff; border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.04em"><i class="fa-solid fa-arrow-trend-up" style="color:#10B981"></i> +68% Organic Growth</div>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">Website SEO & Performance Optimization</h3>
+                                <p class="project-desc">Complete SEO overhaul for a corporate website struggling with indexing and slow load times. Rebuilt technical foundation and content architecture.</p>
+                                <div class="meta-row">
+                                    <span class="tag"><i class="fa-regular fa-user me-1"></i> Role: SEO Specialist</span>
+                                    <span class="tag">Technical SEO</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="tag">Screaming Frog</span><span class="tag">GSC</span><span class="tag">PageSpeed</span><span class="tag">Schema</span>
+                                </div>
+                                <div class="contrib">
+                                    <div class="contrib-title">Key Contributions</div>
+                                    <ul>
+                                        <li>Audited 400+ URLs, fixed crawl & indexation issues</li>
+                                        <li>Improved LCP from 4.2s → 1.8s via asset optimization</li>
+                                        <li>Implemented schema & internal linking framework</li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tag" style="background:rgba(37,99,235,0.06)">Relevant: Keyword Research</span><span class="tag">On-Page SEO</span>
+                                </div>
+                            </div>
+                            <div class="project-foot">
+                                <a href="#" class="btn btn-primary w-100" onclick="event.preventDefault(); openProject(0)">View Project <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:11px"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="col-lg-4">
+                        <article class="project-card">
+                            <div class="project-top">
+                                <span class="company">Deepsense Digital Solution</span>
+                                <span class="tag" style="background:rgba(16,185,129,0.08); color:#059669; border-color:rgba(16,185,129,0.14)">Digital Growth</span>
+                            </div>
+                            <div style="height:160px; background:linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); display:grid; place-items:center; border-bottom:1px solid var(--line); position:relative; overflow:hidden">
+                                <i class="fa-solid fa-chart-simple" style="font-size:42px; color:#6EE7B7"></i>
+                                <div style="position:absolute; bottom:12px; right:12px; background:#fff; border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.04em"><i class="fa-solid fa-link" style="color:var(--accent)"></i> 120+ Quality Backlinks</div>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">SEO & Digital Website Optimization</h3>
+                                <p class="project-desc">End-to-end SEO program for a digital agency portfolio to boost domain authority and generate inbound leads through content & off-page strategy.</p>
+                                <div class="meta-row">
+                                    <span class="tag"><i class="fa-regular fa-user me-1"></i> Role: SEO Analyst</span>
+                                    <span class="tag">Content Strategy</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="tag">Ahrefs</span><span class="tag">SEMrush</span><span class="tag">WordPress</span><span class="tag">GA4</span>
+                                </div>
+                                <div class="contrib">
+                                    <div class="contrib-title">Key Contributions</div>
+                                    <ul>
+                                        <li>Built topical clusters for 30+ money keywords</li>
+                                        <li>Executed white-hat outreach → DA 18 → 34</li>
+                                        <li>Optimized service pages → +42% lead conversions</li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tag" style="background:rgba(16,185,129,0.08)">Relevant: Off-Page SEO</span><span class="tag">Content SEO</span>
+                                </div>
+                            </div>
+                            <div class="project-foot">
+                                <a href="#" class="btn btn-primary w-100" onclick="event.preventDefault(); openProject(1)">View Project <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:11px"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="col-lg-4">
+                        <article class="project-card" style="border-color:var(--dark);">
+                            <div class="project-top" style="background:var(--dark); border-color:var(--dark)">
+                                <span class="company" style="color:#fff"><span style="background:#10B981" class="d-inline-block rounded-circle" style="width:7px; height:7px"></span> Verifitech India</span>
+                                <span class="tag" style="background:rgba(255,255,255,0.12); color:#fff; border-color:rgba(255,255,255,0.14)">Web + SEO + Security</span>
+                            </div>
+                            <div style="height:160px; background:linear-gradient(135deg, #0F172A 0%, #1E293B 100%); display:grid; place-items:center; border-bottom:1px solid #1E293B; position:relative; overflow:hidden">
+                                <i class="fa-solid fa-shield-halved" style="font-size:42px; color:#38BDF8"></i>
+                                <div style="position:absolute; bottom:12px; right:12px; background:#fff; border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.04em"><i class="fa-solid fa-lock" style="color:#059669"></i> OWASP Hardened</div>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">Secure Web Platform + SEO Foundation</h3>
+                                <p class="project-desc">Developed and secured a corporate platform combining MERN development, technical SEO setup and SOC-aligned monitoring with Splunk.</p>
+                                <div class="meta-row">
+                                    <span class="tag"><i class="fa-regular fa-user me-1"></i> Role: Web Dev + Security</span>
+                                    <span class="tag">Full Stack</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="tag">MERN</span><span class="tag">Splunk</span><span class="tag">AWS</span><span class="tag">OWASP</span>
+                                </div>
+                                <div class="contrib">
+                                    <div class="contrib-title">Key Contributions</div>
+                                    <ul>
+                                        <li>Built responsive MERN site with SSR for SEO</li>
+                                        <li>Integrated Splunk dashboards for real-time alerts</li>
+                                        <li>Hardened app (IAM, WAF, sanitization) — 0 critical vulns</li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tag" style="background:var(--dark); color:#fff; border-color:var(--dark)">Relevant: Cybersecurity</span><span class="tag">Web Dev</span>
+                                </div>
+                            </div>
+                            <div class="project-foot">
+                                <a href="#" class="btn w-100" style="background:var(--dark); color:#fff; border-radius:999px; font-weight:600; padding:10px" onclick="event.preventDefault(); openProject(2)">View Project <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:11px"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section-alt">
+            <div class="container">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-4">
+                        <div class="section-label reveal">Experience</div>
+                        <h2 class="section-title reveal" style="transition-delay:.06s">Clean timeline, real outcomes.</h2>
+                        <p class="section-desc reveal" style="transition-delay:.1s">Progressive experience across SEO, development and security operations — each role compounding the next.</p>
+                        <div class="d-flex gap-2 mt-3 reveal" style="transition-delay:.14s">
+                            <a href="#" class="btn btn-outline-dark btn-sm" onclick="event.preventDefault(); document.getElementById('cvToast').classList.add('show'); setTimeout(()=>document.getElementById('cvToast').classList.remove('show'),2500)"><i class="fa-regular fa-file-lines me-1"></i> Download Resume</a>
+                            <a href="https://linkedin.com" target="_blank" class="btn btn-outline-dark btn-sm"><i class="fa-brands fa-linkedin me-1"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="timeline">
+                            <!-- Item 1 -->
+                            <div class="t-item reveal active">
+                                <div class="t-dot"></div>
+                                <div class="t-card">
+                                    <div class="d-flex flex-wrap justify-content-between gap-2 align-items-start mb-2">
+                                        <div>
+                                            <h3 style="font-size:16px; font-weight:800; margin:0">Web Development, SEO & Cybersecurity</h3>
+                                            <div style="font-size:13px; font-weight:600; color:var(--accent); margin-top:2px">Verifitech India — Full Stack & SOC Support</div>
+                                        </div>
+                                        <span class="t-date">Jan 2024 — Present</span>
+                                    </div>
+                                    <p style="font-size:13px; color:var(--muted); margin:8px 0 12px">Leading secure development and search optimization for client platforms. Bridging dev and SOC teams.</p>
+                                    <ul style="font-size:13px; color:var(--dark-2); margin:0; padding-left:18px; line-height:1.7">
+                                        <li>Developed SEO-optimized MERN applications with SSR and structured data</li>
+                                        <li>Implemented Splunk alerts and AWS WAF rules reducing false positives by 31%</li>
+                                        <li>Conducted OWASP-based code reviews and vulnerability remediation</li>
+                                    </ul>
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        <span class="tag">MERN</span><span class="tag">Splunk</span><span class="tag">AWS</span><span class="tag">Technical SEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="t-item reveal" style="transition-delay:.08s">
+                                <div class="t-dot"></div>
+                                <div class="t-card">
+                                    <div class="d-flex flex-wrap justify-content-between gap-2 align-items-start mb-2">
+                                        <div>
+                                            <h3 style="font-size:16px; font-weight:800; margin:0">SEO & Digital Website Optimization</h3>
+                                            <div style="font-size:13px; font-weight:600; color:var(--accent); margin-top:2px">Deepsense Digital Solution — SEO Specialist</div>
+                                        </div>
+                                        <span class="t-date" style="background:var(--bg-alt); color:var(--muted); border-color:var(--line)">Jun 2022 — Dec 2023</span>
+                                    </div>
+                                    <p style="font-size:13px; color:var(--muted); margin:8px 0 12px">Owned organic growth for multiple SMB websites through content and technical improvements.</p>
+                                    <ul style="font-size:13px; color:var(--dark-2); margin:0; padding-left:18px; line-height:1.7">
+                                        <li>Increased average organic traffic by 45% across 5 properties</li>
+                                        <li>Built sustainable backlink profiles (DA +16 avg.) via outreach & digital PR</li>
+                                        <li>Optimized WordPress stack for Core Web Vitals (all pages 90+)</li>
+                                    </ul>
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        <span class="tag">WordPress</span><span class="tag">Ahrefs</span><span class="tag">Off-Page SEO</span><span class="tag">GA4</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="t-item reveal" style="transition-delay:.14s">
+                                <div class="t-dot"></div>
+                                <div class="t-card">
+                                    <div class="d-flex flex-wrap justify-content-between gap-2 align-items-start mb-2">
+                                        <div>
+                                            <h3 style="font-size:16px; font-weight:800; margin:0">Website SEO & Optimization</h3>
+                                            <div style="font-size:13px; font-weight:600; color:var(--accent); margin-top:2px">Five Technology — SEO Executive</div>
+                                        </div>
+                                        <span class="t-date" style="background:var(--bg-alt); color:var(--muted); border-color:var(--line)">Jan 2021 — May 2022</span>
+                                    </div>
+                                    <p style="font-size:13px; color:var(--muted); margin:8px 0 12px">Foundation role focused on technical audits, keyword research and on-page excellence.</p>
+                                    <ul style="font-size:13px; color:var(--dark-2); margin:0; padding-left:18px; line-height:1.7">
+                                        <li>Audited & optimized 120+ pages for indexability and relevance</li>
+                                        <li>Created keyword maps that improved top-10 rankings by 38%</li>
+                                        <li>Collaborated with devs to implement schema and speed fixes</li>
+                                    </ul>
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        <span class="tag">On-Page SEO</span><span class="tag">Keyword Research</span><span class="tag">GSC</span><span class="tag">Schema</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS -->
+        <section id="tools">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+                    <div>
+                        <div class="section-label reveal">Stack</div>
+                        <h2 class="section-title reveal" style="transition-delay:.06s">Tools & Technologies</h2>
+                        <p class="section-desc reveal" style="transition-delay:.1s">The toolkit I use daily — from crawl to code to console.</p>
+                    </div>
+                    <div class="reveal d-none d-md-block" style="transition-delay:.12s; font-size:13px; color:var(--muted)"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Frequently updated stack</div>
+                </div>
+
+                <div class="tool-grid stagger">
+                    <div class="tool"><i class="fa-solid fa-magnifying-glass" style="color:var(--accent)"></i><div><strong>SEO Suite</strong><span>Ahrefs • SEMrush</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-html5" style="color:#E34F26"></i><div><strong>HTML5</strong><span>Semantic</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-css3-alt" style="color:#1572B6"></i><div><strong>CSS3</strong><span>Modern</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-js" style="color:#F7DF1E; background:#111827; border-color:#111827"></i><div><strong>JavaScript</strong><span>ES6+</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-wordpress" style="color:#21759B"></i><div><strong>WordPress</strong><span>Themes • CMS</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-react" style="color:#61DAFB"></i><div><strong>React</strong><span>MERN</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-node-js" style="color:#339933"></i><div><strong>Node.js</strong><span>Express</span></div></div>
+                    <div class="tool"><i class="fa-solid fa-database" style="color:#47A248"></i><div><strong>MongoDB</strong><span>Database</span></div></div>
+                    <div class="tool"><i class="fa-solid fa-chart-column" style="color:#FF6A00"></i><div><strong>Splunk</strong><span>SIEM</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-aws" style="color:#FF9900"></i><div><strong>AWS</strong><span>IAM • WAF</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-git-alt" style="color:#F05032"></i><div><strong>Git & GitHub</strong><span>Versioning</span></div></div>
+                    <div class="tool"><i class="fa-solid fa-shield-halved" style="color:#059669"></i><div><strong>OWASP</strong><span>Secure Code</span></div></div>
+                    <div class="tool"><i class="fa-solid fa-gauge-high" style="color:var(--accent)"></i><div><strong>PageSpeed</strong><span>Core Web Vitals</span></div></div>
+                    <div class="tool"><i class="fa-brands fa-searchengin" style="color:#4285F4"></i><div><strong>GSC • GA4</strong><span>Analytics</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section-alt">
+            <div class="container">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-5">
+                        <div class="section-label reveal">Contact</div>
+                        <h2 class="section-title reveal" style="transition-delay:.06s">Let’s build something search-proof & secure.</h2>
+                        <p class="section-desc reveal" style="transition-delay:.1s">Have a project, role, or audit in mind? I typically reply within 12 hours. No recruiters spam — just clear, professional communication.</p>
+
+                        <div class="d-flex flex-column gap-3 mt-4">
+                            <div class="contact-card reveal" style="transition-delay:.12s">
+                                <i class="fa-regular fa-envelope"></i>
+                                <div>
+                                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)">Email</div>
+                                    <a href="mailto:.com" style="font-weight:600; color:var(--dark); font-size:15px">kovendan16@gmail.com</a>                                    <div style="font-size:12px; color:var(--muted)">Preferred for project inquiries</div>
+                                </div>
+                            </div>
+                            <div class="contact-card reveal" style="transition-delay:.16s">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)">Phone</div>
+                                    <a href="tel:+916383761981" style="font-weight:600; color:var(--dark); font-size:15px">+91 6383761981</a>
+                                    <div style="font-size:12px; color:var(--muted)">Mon–Fri, 10am–6pm IST</div>
+                                </div>
+                            </div>
+                            <div class="contact-card reveal" style="transition-delay:.20s">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)">Location</div>
+                                    <div style="font-weight:600; font-size:15px">Chennai, India</div>
+                                    <div style="font-size:12px; color:var(--muted)">Available remotely worldwide</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-4 reveal" style="transition-delay:.22s">
+                            <a href="https://linkedin.com" target="_blank" class="social"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://github.com" target="_blank" class="social"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="social"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="mailto:arjun.mehta@email.com" class="social"><i class="fa-regular fa-envelope"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="card-minimal reveal" style="transition-delay:.12s; padding:26px; box-shadow:var(--shadow)">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 style="font-size:18px; font-weight:800; margin:0">Send a message</h3>
+                                <span class="tag"><span style="width:6px; height:6px; background:#10B981; border-radius:50%; display:inline-block; margin-right:6px"></span> Avg reply: 6h</span>
+                            </div>
+                            <form id="contactForm" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your full name" required>
+                                        <div class="invalid-feedback">Please enter your name (min 2 characters).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@company.com" required>
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Project inquiry, SEO audit, SOC role..." required>
+                                        <div class="invalid-feedback">Please add a subject (min 5 characters).</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="message">Message</label>
+                                        <textarea class="form-control" id="message" rows="5" placeholder="Tell me a bit about your goals, timeline and budget..." required></textarea>
+                                        <div class="invalid-feedback">Please write a message (min 15 characters).</div>
+                                        <div class="d-flex justify-content-between mt-2">
+                                            <span style="font-size:12px; color:var(--muted)"><i class="fa-solid fa-lock me-1"></i> Your info is never shared</span>
+                                            <span style="font-size:12px; color:var(--muted)" id="charCount">0 / 500</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="consent" required>
+                                            <label class="form-check-label" for="consent" style="font-size:13px; color:var(--muted)">I agree to be contacted about my inquiry.</label>
+                                            <div class="invalid-feedback">You must agree before submitting.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-grid">
+                                        <button type="submit" class="btn btn-primary py-3" style="font-size:15px">Send Message <i class="fa-solid fa-paper-plane ms-1" style="font-size:12px"></i></button>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="formAlert" class="alert d-none mb-0" role="alert" style="border-radius:12px; font-size:14px"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="brand-mark">AM</span>
+                    <div>
+                        <div style="font-weight:700; font-size:14px; line-height:1">Arjun Mehta</div>
+                        <div style="font-size:12px; color:var(--muted)">© <span id="year"></span> All rights reserved. Built with care for performance & security.</div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span style="font-size:12px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)" class="d-none d-md-inline">Follow</span>
+                    <div class="social d-flex gap-2">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" style="font-size:14px"></i></a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github" style="font-size:14px"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter" style="font-size:14px"></i></a>
+                        <a href="mailto:arjun.mehta@email.com" aria-label="Email"><i class="fa-regular fa-envelope" style="font-size:14px"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start mt-3 pt-3" style="border-top:1px solid var(--line); font-size:12px; color:var(--muted)">
+                <a href="#home" style="color:var(--muted)">Home</a>
+                <span>•</span>
+                <a href="#about" style="color:var(--muted)">About</a>
+                <span>•</span>
+                <a href="#projects" style="color:var(--muted)">Projects</a>
+                <span>•</span>
+                <span>SEO • Web Development • Cybersecurity</span>
+                <span class="ms-auto d-none d-md-inline"><i class="fa-solid fa-bolt" style="color:#F59E0B"></i> Fast • <i class="fa-solid fa-shield-halved" style="color:#10B981"></i> Secure • <i class="fa-solid fa-magnifying-glass" style="color:var(--accent)"></i> Optimized</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius:18px; border:1px solid var(--line); overflow:hidden">
+                <div class="modal-header" style="border-bottom:1px solid var(--line)">
+                    <div>
+                        <div id="modalCompany" style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent)"></div>
+                        <h5 class="modal-title" id="modalTitle" style="font-weight:800"></h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding:22px">
+                    <p id="modalDesc" style="color:var(--muted); font-size:14px; line-height:1.7"></p>
+                    <div class="row g-3 mt-1">
+                        <div class="col-md-6">
+                            <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Role & Duration</div>
+                            <div id="modalRole" style="font-size:14px; font-weight:600; margin-top:4px"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Technologies</div>
+                            <div id="modalTech" class="d-flex flex-wrap gap-2 mt-2"></div>
+                        </div>
+                    </div>
+                    <div class="contrib mt-3">
+                        <div class="contrib-title">Key Contributions & Impact</div>
+                        <ul id="modalContrib"></ul>
+                    </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" id="modalLink" target="_blank" class="btn btn-primary flex-fill">Visit Live Project <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:11px"></i></a>
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Toast -->
+    <div id="cvToast" class="toast align-items-center text-bg-dark border-0 position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true" style="background:var(--dark)!important; border-radius:12px; transform:translateY(20px); opacity:0; pointer-events:none; transition:all .25s ease">
+        <div class="d-flex">
+            <div class="toast-body" style="font-size:14px"><i class="fa-solid fa-circle-check me-2" style="color:#10B981"></i> CV download started — check your downloads!</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="document.getElementById('cvToast').classList.remove('show')"></button>
+        </div>
+    </div>
+    <style>
+        #cvToast.show{ transform:none; opacity:1; pointer-events:auto}
+    </style>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll progress
+        const progress = document.getElementById('progress');
+        window.addEventListener('scroll', ()=>{
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progress.style.width = scrolled + '%';
+            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if(e.isIntersecting) e.target.classList.add('in');
+            });
+        }, {threshold:0.12});
+        document.querySelectorAll('.reveal, .stagger').forEach(el=> observer.observe(el));
+
+        // Active nav
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', ()=>{
+            let current = '';
+            sections.forEach(s=>{
+                const top = s.offsetTop - 120;
+                if(window.scrollY >= top) current = s.getAttribute('id');
+            });
+            navLinks.forEach(a=>{
+                a.classList.remove('active');
+                if(a.getAttribute('href') === '#'+current) a.classList.add('active');
+            });
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('.nav-link, .navbar .btn').forEach(a=>{
+            a.addEventListener('click', ()=>{
+                const bsCollapse = document.getElementById('navContent');
+                if(bsCollapse.classList.contains('show')){
+                    new bootstrap.Collapse(bsCollapse).hide();
+                }
+            });
+        });
+
+        // Projects data
+        const projects = [
+            {
+                company:'Five Technology',
+                title:'Website SEO & Performance Optimization',
+                desc:'A comprehensive SEO and speed overhaul for a corporate site with poor index coverage and 4.2s LCP. Delivered a full technical audit, information architecture revamp, schema implementation and performance budget.',
+                role:'SEO Specialist • Jan 2021 — May 2022',
+                tech:['Screaming Frog','Google Search Console','PageSpeed Insights','Schema.org','HTML/CSS'],
+                contrib:['Audited 400+ URLs and resolved crawl, canonical and indexation issues','Cut LCP from 4.2s to 1.8s and CLS to 0.04 via image, font and JS optimization','Built internal linking & schema framework lifting featured snippet wins by 22%','Delivered +68% organic traffic in 5 months'],
+                link:'https://ifive.in/best-erp-in-chennai'
+            },
+            {
+                company:'Deepsense Digital Solution',
+                title:'SEO & Digital Website Optimization',
+                desc:'Owned SEO growth for a digital agency — combining content clustering, technical fixes and white-hat authority building to turn the site into a lead engine.',
+                role:'SEO Analyst Intern',
+                tech:['Ahrefs','SEMrush','WordPress','GA4','GSC'],
+                contrib:['Created topical clusters for 30+ commercial keywords — 18 reached top 3','DA 18 → 34 via outreach and digital PR (120+ referring domains)','Service page CRO + technical fixes → +42% inbound leads','Achieved 90+ PageSpeed across all templates'],
+                link:'https://kaleesuwari.com/blog/choosing-the-best-lamp-oil-for-home-worship?srsltid=AU7gw4UbGMPJ7nAffRNZd5mFBtQLq5GB2bpnyPSvrnXJQ37SNCOhl-GS'
+            },
+            {
+                company:'Verifitech India',
+                title:'Secure Web Platform + SEO Foundation',
+                desc:'End-to-end build of a secure, SEO-ready corporate platform using MERN, with Splunk-based monitoring and AWS hardening aligned to SOC workflows.',
+                role:'Web Developer + Cybersecurity (SOC Support) • Jan 2024 — Present',
+                tech:['MongoDB','Express','React','Node.js','Splunk','AWS (IAM, WAF)','OWASP'],
+                contrib:['Built SSR-enabled MERN site with structured data and perfect indexability','Integrated Splunk dashboards & alerts — MTTD reduced by 31%','Hardened IAM, WAF and input sanitization — zero critical vulnerabilities in pen-test','Lighthouse 98/100 with <1.6s LCP globally via CDN'],
+                link:'https://verifitech.com'
+            }
+        ];
+
+        const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+        function openProject(i){
+            const p = projects[i];
+            document.getElementById('modalCompany').textContent = p.company;
+            document.getElementById('modalTitle').textContent = p.title;
+            document.getElementById('modalDesc').textContent = p.desc;
+            document.getElementById('modalRole').textContent = p.role;
+            document.getElementById('modalTech').innerHTML = p.tech.map(t=>`<span class="tag">${t}</span>`).join('');
+            document.getElementById('modalContrib').innerHTML = p.contrib.map(c=>`<li>${c}</li>`).join('');
+            document.getElementById('modalLink').href = p.link;
+            modal.show();
+        }
+        window.openProject = openProject;
+
+        // Contact form
+        const form = document.getElementById('contactForm');
+        const alertBox = document.getElementById('formAlert');
+        const charCount = document.getElementById('charCount');
+        const messageEl = document.getElementById('message');
+
+        messageEl.addEventListener('input', ()=>{
+            charCount.textContent = `${messageEl.value.length} / 500`;
+            if(messageEl.value.length > 500) messageEl.value = messageEl.value.slice(0,500);
+        });
+
+        function showAlert(type, msg){
+            alertBox.className = `alert alert-${type}`;
+            alertBox.textContent = msg;
+            alertBox.classList.remove('d-none');
+            setTimeout(()=> alertBox.classList.add('d-none'), 4000);
+        }
+
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            let valid = true;
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            const consent = document.getElementById('consent');
+
+            // reset
+            [name,email,subject,message,consent].forEach(el=> el.classList.remove('is-invalid'));
+
+            if(name.value.trim().length < 2){ name.classList.add('is-invalid'); valid=false; }
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){ email.classList.add('is-invalid'); valid=false; }
+            if(subject.value.trim().length < 5){ subject.classList.add('is-invalid'); valid=false; }
+            if(message.value.trim().length < 15){ message.classList.add('is-invalid'); valid=false; }
+            if(!consent.checked){ consent.classList.add('is-invalid'); valid=false; }
+
+            if(!valid){
+                showAlert('danger','Please fix the highlighted fields and try again.');
+                return;
+            }
+
+            // success
+            const btn = form.querySelector('button[type="submit"]');
+            const original = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+            setTimeout(()=>{
+                btn.innerHTML = original;
+                btn.disabled = false;
+                form.reset();
+                charCount.textContent = '0 / 500';
+                showAlert('success','✓ Message sent successfully! I’ll get back to you within 12 hours.');
+            }, 1100);
+        });
+
+        // Smooth scroll offset for sticky nav
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click', function(e){
+                const id = this.getAttribute('href');
+                if(id.length>1){
+                    const target = document.querySelector(id);
+                    if(target){
+                        e.preventDefault();
+                        const top = target.getBoundingClientRect().top + window.scrollY - 72;
+                        window.scrollTo({top, behavior:'smooth'});
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
